@@ -8,11 +8,11 @@ We can see that the barbier file is a 64 bit elf file.
 
 When we run a obj dump (```objdump ./babiersteps -d```). we can see that the program contains a win function at address ```0x4011c9.```
 
-![alt text](images/segfault.png?raw=true "win")
+![alt text](images/win.png?raw=true "win")
 
 
 After making the file executable and running we are shown the text "Everyone has heard of gets, but have you heard of scanf?".
-If we input some random characters the program wil seemingly do nothing and shut down. If we give the program an input thats over 120 bytes the progrem wil return a segment fault.
+If we input some random characters the program wil seemingly do nothing and shut down. If we give the program an input thats over 120 bytes the program wil return a segment fault.
 
 ![alt text](images/segfault.png?raw=true "seg")
 
