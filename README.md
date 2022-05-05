@@ -19,6 +19,8 @@ If we input some random characters the program wil seemingly do nothing and shut
 If we open the program in gdb can get a better look at what is going on. ```gdb ./babiersteps``` (Note: I am using geff extention for gdb).
 When we imput a lot of A's (300) we can see that we clotter most of the stack but not the RIP (instruction pointer) wich we want to control and point to our win function.
 
+![alt text](images/clotter.png?raw=true "clotter")
+
 Because the file is a 64 bit elf the RIP address has to be a 48 bit canonical address wich means the address has to be in the range ```0x0000000000000000``` to ```0x00007FFFFFFFFFFF``` and ```0xFFFF800000000000``` to ```0xFFFFFFFFFFFFFFFF```. otherwise the address wont be able to clutter the RIP. If we input a bunch of A's we are overwriting the rip with a non-canonical address. If we however run the program with 120 A's up to the point of getting the segfault(offset) and add a 6 bytes canonial address of 6 B's ```0x0000424242424242``` to the end we can see we can control the RIP.
 
 ![alt text](images/control.png?raw=true "control")
