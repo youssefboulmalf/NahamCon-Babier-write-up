@@ -6,7 +6,7 @@ After downloading the babier file we run the ```file ./babiersteps``` command wi
 
 We can see that the barbier file is a 64 bit elf file.
 
-When we run a obj dump (```bjdump ./babiersteps -d```). we can see that the program contains a win function at address ```0x4011c9.```
+When we run a obj dump (```objdump ./babiersteps -d```). we can see that the program contains a win function at address ```0x4011c9.```
 
 ![alt text](images/segfault.png?raw=true "win")
 
