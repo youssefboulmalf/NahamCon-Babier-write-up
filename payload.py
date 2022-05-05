@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
         '--host',
         type=str,
-        help='The host name or IP adress to connect to'
+        help='The host name or IP address to connect to'
         )
 parser.add_argument(
         '--port',
